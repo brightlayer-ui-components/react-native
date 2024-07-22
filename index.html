@@ -1,174 +1,40 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><title>Storybook</title><meta name="viewport" content="width=device-width,initial-scale=1"/><style>html, body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }</style><script>/* globals window */
-  /* eslint-disable no-underscore-dangle */
-  try {
-    if (window.top !== window) {
-      window.__REACT_DEVTOOLS_GLOBAL_HOOK__ = window.top.__REACT_DEVTOOLS_GLOBAL_HOOK__;
-    }
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.warn('unable to connect to top frame for connecting dev tools');
-  }</script><style>.sidebar-header {
-        padding: 16px 8px 8px !important;
-    }
-
-    .css-19bal3c,
-    .css-7nj0wm,
-    .css-wl7nqa,
-    .css-1ifygg9 {
-        font-size: 14px !important;
-    }
-
-    .css-qbmosi {
-        margin: 0 8px 1rem !important;
-    }
-
-    .addon-notes-container {
-        max-width: 1100px !important;
-    }
-
-    /* Hide Canvas, Notes section */
-    .css-1tgscux {
-        display: none !important;
-    }
-
-    /* Do not affect anything within the addons panel */
-    #storybook-panel-root .css-1tgscux {
-        display: unset !important;
-    }
-
-    /* Hide vertical divider in top bar. */
-    .css-11sh1n2 .css-ojgf1b:first-of-type {
-        display: none !important;
-    }
-
-    .selected {
-        background: #017bc1 !important; /* Blue[500 */
-    }
-
-    /* open-sans-300normal - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 300;
-        src: local('Open Sans Light'), local('Open Sans-Light'),
-            url('./open-sans-latin-300-normal.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-300-normal.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-300italic - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 300;
-        src: local('Open Sans Light italic'), local('Open Sans-Lightitalic'),
-            url('./open-sans-latin-300-italic.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-300-italic.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-400normal - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src: local('Open Sans Regular'), local('Open Sans-Regular'),
-            url('./open-sans-latin-400-normal.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-400-normal.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-400italic - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 400;
-        src: local('Open Sans Regular italic'), local('Open Sans-Regularitalic'),
-            url('./open-sans-latin-400-italic.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-400-italic.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-600normal - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 600;
-        src: local('Open Sans SemiBold'), local('Open Sans-SemiBold'),
-            url('./open-sans-latin-600-normal.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-600-normal.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-600italic - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 600;
-        src: local('Open Sans SemiBold italic'), local('Open Sans-SemiBolditalic'),
-            url('./open-sans-latin-600-italic.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-600-italic.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-700normal - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 700;
-        src: local('Open Sans Bold'), local('Open Sans-Bold'), url('./open-sans-latin-700-normal.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-700-normal.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-700italic - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 700;
-        src: local('Open Sans Bold italic'), local('Open Sans-Bolditalic'),
-            url('./open-sans-latin-700-italic.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-700-italic.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-800normal - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 800;
-        src: local('Open Sans ExtraBold'), local('Open Sans-ExtraBold'),
-            url('./open-sans-latin-800-normal.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-800-normal.woff') format('woff');
-        /* Modern Browsers */
-    }
-
-    /* open-sans-800italic - latin */
-    @font-face {
-        font-family: 'Open Sans';
-        font-style: italic;
-        font-display: swap;
-        font-weight: 800;
-        src: local('Open Sans ExtraBold italic'), local('Open Sans-ExtraBolditalic'),
-            url('./open-sans-latin-800-italic.woff2') format('woff2'),
-            /* Super Modern Browsers */ url('./open-sans-latin-800-italic.woff') format('woff');
-        /* Modern Browsers */
-    }</style><script>window.STORYBOOK_GA_ID = 'UA-139646200-6';</script><style>#root[hidden],
-      #docs-root[hidden] {
-        display: none !important;
-      }</style></head><body><div id="root"></div><div id="docs-root"></div><script>window['DOCS_MODE'] = false;</script><script src="runtime~main.f6145a39c2e3eb089a89.bundle.js"></script><script src="vendors~main.e07231eb583341d0e548.bundle.js"></script><script src="main.1279f63483debffd73e6.bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Start Single Page Apps for GitHub Pages -->
+        <script type="text/javascript">
+            // Single Page Apps for GitHub Pages
+            // MIT License
+            // https://github.com/rafgraph/spa-github-pages
+            // This script checks to see if a redirect is present in the query string,
+            // converts it back into the correct url and adds it to the
+            // browser's history using window.history.replaceState(...),
+            // which won't cause the browser to attempt to load the new url.
+            // When the single page app is loaded further down in this file,
+            // the correct url will be waiting in the browser's history for
+            // the single page app to route accordingly.
+            (function (l) {
+                if (l.search[1] === '/') {
+                    var decoded = l.search
+                        .slice(1)
+                        .split('&')
+                        .map(function (s) {
+                            return s.replace(/~and~/g, '&');
+                        })
+                        .join('?');
+                    window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+                }
+            })(window.location);
+        </script>
+        <!-- End Single Page Apps for GitHub Pages -->
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/react-native/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Brightlayer UI React Native Docs</title>
+      <script type="module" crossorigin src="/react-native/assets/index-C91gtZs7.js"></script>
+      <link rel="stylesheet" crossorigin href="/react-native/assets/index-BjfUd1Qq.css">
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>
